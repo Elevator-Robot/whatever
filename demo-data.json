@@ -1,0 +1,45 @@
+{
+  "exportDate": "2024-10-02T17:00:00.000Z",
+  "version": "1.0",
+  "records": [
+    {
+      "id": "demo1728748800000",
+      "title": "Ultimate Cat Fails Compilation 2024",
+      "url": "https://www.youtube.com/watch?v=demoexample1",
+      "duration": "300",
+      "rating": "5",
+      "category": "funny",
+      "tags": ["funny", "fails", "compilation", "hilarious"],
+      "notes": "The funniest cat fails I've ever seen! Made me laugh until I cried.",
+      "dateWatched": "2024-10-01",
+      "created": "2024-10-02T17:00:00.000Z",
+      "modified": "2024-10-02T17:00:00.000Z"
+    },
+    {
+      "id": "demo1728748900000",
+      "title": "Sleepy Orange Tabby Kitten",
+      "url": "https://www.youtube.com/watch?v=demoexample2",
+      "duration": "120",
+      "rating": "4",
+      "category": "kitten",
+      "tags": ["kitten", "sleepy", "orange", "adorable"],
+      "notes": "This little orange kitten falling asleep while playing is the cutest thing ever!",
+      "dateWatched": "2024-09-30",
+      "created": "2024-10-02T17:05:00.000Z",
+      "modified": "2024-10-02T17:05:00.000Z"
+    },
+    {
+      "id": "demo1728749000000",
+      "title": "Cat Does Amazing Tricks",
+      "url": "https://www.youtube.com/watch?v=demoexample3",
+      "duration": "180",
+      "rating": "5",
+      "category": "trick",
+      "tags": ["tricks", "smart cat", "training", "amazing"],
+      "notes": "Incredible! This cat can sit, roll over, and even fetch like a dog.",
+      "dateWatched": "2024-09-28",
+      "created": "2024-10-02T17:10:00.000Z",
+      "modified": "2024-10-02T17:10:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Video Data Capture System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐱 Cat Video Data Capture System</h1>
+            <p>Capture and manage data about your favorite cat videos</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-button active" onclick="showTab('capture')">📝 Capture Data</button>
+            <button class="tab-button" onclick="showTab('view')">📋 View Records</button>
+            <button class="tab-button" onclick="showTab('export')">💾 Export/Import</button>
+        </nav>
+
+        <!-- Data Capture Tab -->
+        <div id="capture" class="tab-content active">
+            <form id="catVideoForm">
+                <div class="form-group">
+                    <label for="title">Video Title*</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="url">Video URL</label>
+                    <input type="url" id="url" name="url" placeholder="https://...">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duration">Duration (seconds)</label>
+                        <input type="number" id="duration" name="duration" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating (1-5)</label>
+                        <select id="rating" name="rating">
+                            <option value="">Select rating</option>
+                            <option value="1">⭐ 1 - Poor</option>
+                            <option value="2">⭐⭐ 2 - Fair</option>
+                            <option value="3">⭐⭐⭐ 3 - Good</option>
+                            <option value="4">⭐⭐⭐⭐ 4 - Very Good</option>
+                            <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option value="">Select category</option>
+                        <option value="funny">😹 Funny</option>
+                        <option value="cute">😻 Cute</option>
+                        <option value="compilation">📹 Compilation</option>
+                        <option value="kitten">🐱 Kitten</option>
+                        <option value="trick">🎪 Tricks</option>
+                        <option value="reaction">😮 Reaction</option>
+                        <option value="other">🔖 Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="funny, orange cat, sleepy">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Additional notes about this video..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateWatched">Date Watched</label>
+                    <input type="date" id="dateWatched" name="dateWatched">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">💾 Save Video Data</button>
+                    <button type="button" onclick="clearForm()">🗑️ Clear Form</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- View Records Tab -->
+        <div id="view" class="tab-content">
+            <div class="view-controls">
+                <input type="text" id="searchInput" placeholder="Search videos..." onkeyup="filterRecords()">
+                <select id="categoryFilter" onchange="filterRecords()">
+                    <option value="">All Categories</option>
+                    <option value="funny">😹 Funny</option>
+                    <option value="cute">😻 Cute</option>
+                    <option value="compilation">📹 Compilation</option>
+                    <option value="kitten">🐱 Kitten</option>
+                    <option value="trick">🎪 Tricks</option>
+                    <option value="reaction">😮 Reaction</option>
+                    <option value="other">🔖 Other</option>
+                </select>
+                <button onclick="clearAllData()" class="danger-btn">🗑️ Clear All Data</button>
+            </div>
+            <div id="recordsList"></div>
+        </div>
+
+        <!-- Export/Import Tab -->
+        <div id="export" class="tab-content">
+            <div class="export-section">
+                <h3>📤 Export Data</h3>
+                <p>Download your cat video data as a JSON file:</p>
+                <button onclick="exportData()">📥 Download Data</button>
+            </div>
+            
+            <div class="import-section">
+                <h3>📥 Import Data</h3>
+                <p>Upload a previously exported JSON file:</p>
+                <input type="file" id="importFile" accept=".json" onchange="importData(event)">
+                <div id="importStatus"></div>
+            </div>
+
+            <div class="stats-section">
+                <h3>📊 Statistics</h3>
+                <div id="statsDisplay"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
